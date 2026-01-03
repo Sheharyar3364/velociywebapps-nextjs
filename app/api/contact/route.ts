@@ -30,7 +30,10 @@ export async function POST(request: NextRequest) {
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { success: false, errors: error.errors },
+        {
+          success: false,
+          errors: error.issues, // ✅ Changed from error.errors to error.issues
+        },
         { status: 400 }
       );
     }
