@@ -3,7 +3,7 @@
 export default function Testimonials() {
   const testimonials = [
     {
-      name: "Sarah Ahmed",
+      name: "Kamran Afridi",
       role: "CEO, Ansha Trading",
       avatar: "S",
       rating: 5,
@@ -17,7 +17,7 @@ export default function Testimonials() {
       text: "Professional, responsive, and skilled developers. Our car rental platform has increased bookings by 40% since launch. Worth every penny!",
     },
     {
-      name: "Robert Khan",
+      name: "Ahmad Khan",
       role: "Founder, Rex Super Car",
       avatar: "R",
       rating: 5,

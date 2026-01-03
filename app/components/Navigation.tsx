@@ -212,6 +212,37 @@ export default function Navigation() {
           transform: rotate(-45deg) translate(7px, -7px);
         }
 
+        /* ✅ Close Button for Mobile Menu */
+        .mobile-close-button {
+          position: absolute;
+          top: 1.5rem;
+          right: 2rem;
+          background: rgba(99, 102, 241, 0.2);
+          border: 2px solid rgba(99, 102, 241, 0.5);
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s;
+          z-index: 1001;
+        }
+
+        .mobile-close-button:hover {
+          background: rgba(99, 102, 241, 0.3);
+          border-color: var(--primary);
+          transform: rotate(90deg);
+        }
+
+        .mobile-close-button svg {
+          width: 24px;
+          height: 24px;
+          stroke: white;
+          stroke-width: 2.5;
+        }
+
         /* Mobile Menu Overlay */
         .mobile-menu {
           position: fixed;
@@ -305,6 +336,12 @@ export default function Navigation() {
           .mobile-menu .nav-link {
             font-size: 1.25rem;
           }
+
+          .mobile-close-button {
+            right: 1rem;
+            width: 44px;
+            height: 44px;
+          }
         }
 
         @media (max-width: 375px) {
@@ -388,6 +425,21 @@ export default function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+        {/* ✅ Close Button */}
+        <button
+          className="mobile-close-button"
+          onClick={handleLinkClick}
+          aria-label="Close menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M6 6L18 18M6 18L18 6" strokeLinecap="round" />
+          </svg>
+        </button>
+
         <nav>
           {["Services", "Portfolio", "Pricing", "FAQ", "Contact"].map(
             (item) => (
