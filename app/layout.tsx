@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   keywords:
     "web development, mobile app development, Laravel development, React development, Next.js, React Native, custom web applications",
   authors: [{ name: "VelocityWebApps" }],
+
+  // ✅ ADD THIS: Disable default favicon
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"/>',
+  },
+
   openGraph: {
     type: "website",
     url: "https://velocitywebapps.com",
@@ -34,8 +40,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <body className={inter.className}>
+        <div className="gradient-orb gradient-orb-1" />
+        <div className="gradient-orb gradient-orb-2" />
+        {children}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -55,11 +64,6 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
-      <body className={inter.className}>
-        <div className="gradient-orb gradient-orb-1" />
-        <div className="gradient-orb gradient-orb-2" />
-        {children}
       </body>
     </html>
   );
